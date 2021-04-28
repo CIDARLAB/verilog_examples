@@ -1,0 +1,83 @@
+$date
+	Wed Apr 28 13:19:11 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ms
+$end
+$scope module apollo_11_alu_tb $end
+$var wire 1 ! O2 $end
+$var wire 1 " O1 $end
+$var reg 1 # I0 $end
+$var reg 1 $ I1 $end
+$var reg 1 % I10 $end
+$var reg 1 & I2 $end
+$var reg 1 ' I3 $end
+$var reg 1 ( I4 $end
+$var reg 1 ) I5 $end
+$var reg 1 * I6 $end
+$var reg 1 + I7 $end
+$var reg 1 , I8 $end
+$var reg 1 - I9 $end
+$scope module iApollo11Alu $end
+$var wire 1 # A2X $end
+$var wire 1 $ AReg $end
+$var wire 1 ) Bus $end
+$var wire 1 - CarryIn $end
+$var wire 1 " CarryOut $end
+$var wire 1 , Clear $end
+$var wire 1 . NorEightOut $end
+$var wire 1 / NorFiveOut $end
+$var wire 1 0 NorFourOut $end
+$var wire 1 1 NorNineOut $end
+$var wire 1 2 NorOneOut $end
+$var wire 1 3 NorSevenOut $end
+$var wire 1 4 NorSixOut $end
+$var wire 1 5 NorThreeOut $end
+$var wire 1 6 NorTwoOut $end
+$var wire 1 7 NotXFlipFlop $end
+$var wire 1 8 NotYFlipFlop $end
+$var wire 1 * Shifted $end
+$var wire 1 ! SumOut $end
+$var wire 1 % SumToBus $end
+$var wire 1 + WriteShift $end
+$var wire 1 ' XClear $end
+$var wire 1 9 XFlipFlop $end
+$var wire 1 & XPlusOne $end
+$var wire 1 ( YBus $end
+$var wire 1 : YFlipFlop $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1:
+19
+08
+07
+16
+15
+04
+03
+12
+01
+10
+0/
+1.
+0-
+0,
+0+
+0*
+0)
+0(
+0'
+0&
+0%
+0$
+0#
+0"
+1!
+$end
+#100

@@ -1,0 +1,115 @@
+#! /usr/bin/vvp
+:ivl_version "10.3 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 1;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x55cf5964b680 .scope module, "apollo_11_alu_tb" "apollo_11_alu_tb" 2 4;
+ .timescale 0 -1;
+v0x55cf596654b0_0 .var "I0", 0 0;
+v0x55cf59665570_0 .var "I1", 0 0;
+v0x55cf59665640_0 .var "I10", 0 0;
+v0x55cf59665740_0 .var "I2", 0 0;
+v0x55cf59665810_0 .var "I3", 0 0;
+v0x55cf596658b0_0 .var "I4", 0 0;
+v0x55cf59665980_0 .var "I5", 0 0;
+v0x55cf59665a50_0 .var "I6", 0 0;
+v0x55cf59665b20_0 .var "I7", 0 0;
+v0x55cf59665bf0_0 .var "I8", 0 0;
+v0x55cf59665cc0_0 .var "I9", 0 0;
+v0x55cf59665d90_0 .net "O1", 0 0, L_0x55cf59666bb0;  1 drivers
+v0x55cf59665e60_0 .net "O2", 0 0, L_0x55cf59666a80;  1 drivers
+S_0x55cf5964b800 .scope module, "iApollo11Alu" "Apollo11Alu" 2 8, 3 1 0, S_0x55cf5964b680;
+ .timescale 0 -1;
+    .port_info 0 /INPUT 1 "A2X"
+    .port_info 1 /INPUT 1 "AReg"
+    .port_info 2 /INPUT 1 "XPlusOne"
+    .port_info 3 /INPUT 1 "XClear"
+    .port_info 4 /INPUT 1 "YBus"
+    .port_info 5 /INPUT 1 "Bus"
+    .port_info 6 /INPUT 1 "Shifted"
+    .port_info 7 /INPUT 1 "WriteShift"
+    .port_info 8 /INPUT 1 "Clear"
+    .port_info 9 /INPUT 1 "CarryIn"
+    .port_info 10 /INPUT 1 "SumToBus"
+    .port_info 11 /OUTPUT 1 "CarryOut"
+    .port_info 12 /OUTPUT 1 "SumOut"
+L_0x55cf596477c0 .functor NOR 1, v0x55cf596654b0_0, v0x55cf59665570_0, C4<0>, C4<0>;
+L_0x55cf59637ff0 .functor NOR 1, v0x55cf596658b0_0, v0x55cf59665980_0, C4<0>, C4<0>;
+L_0x55cf59666050 .functor NOR 1, v0x55cf59665a50_0, v0x55cf59665b20_0, C4<0>, C4<0>;
+L_0x55cf59666160 .functor NOR 1, v0x55cf59665740_0, L_0x55cf596477c0, L_0x55cf596662a0, C4<0>;
+L_0x55cf596662a0 .functor NOR 1, L_0x55cf59666160, v0x55cf59665810_0, v0x55cf59665bf0_0, C4<0>;
+L_0x55cf59666450 .functor NOR 1, L_0x55cf59637ff0, L_0x55cf59666050, L_0x55cf596665a0, C4<0>;
+L_0x55cf596665a0 .functor NOR 1, L_0x55cf59666450, v0x55cf59665bf0_0, C4<0>, C4<0>;
+L_0x55cf596666b0 .functor NOR 1, L_0x55cf59666160, L_0x55cf59666450, C4<0>, C4<0>;
+L_0x55cf59666770 .functor NOR 1, L_0x55cf596662a0, L_0x55cf596665a0, C4<0>, C4<0>;
+L_0x55cf596667e0 .functor NOR 1, L_0x55cf596666b0, L_0x55cf59666770, v0x55cf59665cc0_0, C4<0>;
+L_0x55cf596669a0 .functor NOR 1, L_0x55cf596666b0, L_0x55cf59666770, C4<0>, C4<0>;
+L_0x55cf59666a10 .functor NOR 1, v0x55cf59665cc0_0, C4<0>, C4<0>, C4<0>;
+L_0x55cf59666af0 .functor NOR 1, L_0x55cf596669a0, L_0x55cf59666a10, C4<0>, C4<0>;
+L_0x55cf59666bb0 .functor NOR 1, L_0x55cf596666b0, L_0x55cf596667e0, C4<0>, C4<0>;
+L_0x55cf59666a80 .functor NOR 1, L_0x55cf596667e0, L_0x55cf59666af0, v0x55cf59665640_0, C4<0>;
+v0x55cf59637de0_0 .net "A2X", 0 0, v0x55cf596654b0_0;  1 drivers
+v0x55cf59638280_0 .net "AReg", 0 0, v0x55cf59665570_0;  1 drivers
+v0x55cf59638320_0 .net "Bus", 0 0, v0x55cf59665980_0;  1 drivers
+v0x55cf59664180_0 .net "CarryIn", 0 0, v0x55cf59665cc0_0;  1 drivers
+v0x55cf59664240_0 .net "CarryOut", 0 0, L_0x55cf59666bb0;  alias, 1 drivers
+v0x55cf59664350_0 .net "Clear", 0 0, v0x55cf59665bf0_0;  1 drivers
+v0x55cf59664410_0 .net "NorEightOut", 0 0, L_0x55cf59666a10;  1 drivers
+v0x55cf596644d0_0 .net "NorFiveOut", 0 0, L_0x55cf59666770;  1 drivers
+v0x55cf59664590_0 .net "NorFourOut", 0 0, L_0x55cf596666b0;  1 drivers
+v0x55cf59664650_0 .net "NorNineOut", 0 0, L_0x55cf59666af0;  1 drivers
+v0x55cf59664710_0 .net "NorOneOut", 0 0, L_0x55cf596477c0;  1 drivers
+v0x55cf596647d0_0 .net "NorSevenOut", 0 0, L_0x55cf596669a0;  1 drivers
+v0x55cf59664890_0 .net "NorSixOut", 0 0, L_0x55cf596667e0;  1 drivers
+v0x55cf59664950_0 .net "NorThreeOut", 0 0, L_0x55cf59666050;  1 drivers
+v0x55cf59664a10_0 .net "NorTwoOut", 0 0, L_0x55cf59637ff0;  1 drivers
+v0x55cf59664ad0_0 .net "NotXFlipFlop", 0 0, L_0x55cf59666160;  1 drivers
+v0x55cf59664b90_0 .net "NotYFlipFlop", 0 0, L_0x55cf59666450;  1 drivers
+v0x55cf59664c50_0 .net "Shifted", 0 0, v0x55cf59665a50_0;  1 drivers
+v0x55cf59664d10_0 .net "SumOut", 0 0, L_0x55cf59666a80;  alias, 1 drivers
+v0x55cf59664dd0_0 .net "SumToBus", 0 0, v0x55cf59665640_0;  1 drivers
+v0x55cf59664e90_0 .net "WriteShift", 0 0, v0x55cf59665b20_0;  1 drivers
+v0x55cf59664f50_0 .net "XClear", 0 0, v0x55cf59665810_0;  1 drivers
+v0x55cf59665010_0 .net "XFlipFlop", 0 0, L_0x55cf596662a0;  1 drivers
+v0x55cf596650d0_0 .net "XPlusOne", 0 0, v0x55cf59665740_0;  1 drivers
+v0x55cf59665190_0 .net "YBus", 0 0, v0x55cf596658b0_0;  1 drivers
+v0x55cf59665250_0 .net "YFlipFlop", 0 0, L_0x55cf596665a0;  1 drivers
+    .scope S_0x55cf5964b680;
+T_0 ;
+    %vpi_call 2 11 "$monitor", "A2X=%b, AReg=%b, XPLusOne=%b, XClear=%b YBus=%b, Bus=%b, Shifted=%b, WriteShift=%b, Clear=%b, CarryIn=%b, SumToBus=%b, CarryOut=%b, SumOut=%b", v0x55cf596654b0_0, v0x55cf59665570_0, v0x55cf59665740_0, v0x55cf59665810_0, v0x55cf596658b0_0, v0x55cf59665980_0, v0x55cf59665a50_0, v0x55cf59665b20_0, v0x55cf59665bf0_0, v0x55cf59665cc0_0, v0x55cf59665640_0, v0x55cf59665d90_0, v0x55cf59665e60_0 {0 0 0};
+    %vpi_call 2 12 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x55cf5964b680 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55cf596654b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55cf59665570_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55cf59665740_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55cf59665810_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55cf596658b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55cf59665980_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55cf59665a50_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55cf59665b20_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55cf59665bf0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55cf59665cc0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55cf59665640_0, 0, 1;
+    %delay 100, 0;
+    %vpi_call 2 14 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "apollo_11_alu_tb.v";
+    "./apollo_11_alu.v";
